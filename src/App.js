@@ -2,11 +2,21 @@ import React from 'react';
 import './App.css';
 import DebtsList from './DebtsList/DebtsList'
 import Counter from './Counter/Counter'
+import Filter from './Filter/Filter'
 
 export class App extends React.Component {
   state = {
     debtsList: [],
-    debtsAmount: ''
+    debtsAmount: '',
+    filterText: '',
+  }
+
+  onFilterText = (filterText) => {
+    this.setState({
+      filterText
+    })
+
+    console.log("asdsad", this.state.filterText)
   }
 
   componentDidMount() {
@@ -25,6 +35,7 @@ export class App extends React.Component {
 
   render() {
     return(<div>
+      <Filter filterText={this.onFilterText}/>
       <Counter debtsAmount={this.state.debtsAmount}/>
       <DebtsList debtsList={this.state.debtsList}/>
     </div>)
