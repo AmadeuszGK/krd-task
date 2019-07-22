@@ -5,11 +5,21 @@
     transition: height 0.2s ease-in-out;
     padding-top: 15px;
     padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .debts-list__item--focus {
     height: auto;
-    background: rgb(255, 209, 209);
+    background: rgb(241, 241, 241);
+
+    .debts-list__item__button--more {
+        display: none;
+    }
+
+    .debts-list__item__button--less {
+        display: block;
+    }
 }
 
 .debts-list__item__title {
@@ -39,15 +49,29 @@
     font-size: 15px;
 }
 
-.debts-list__item__button {
+.debts-list__item__button--more {
     font-size: 14px;
     color: #ff4040;
     border: none;
     background: transparent;
     margin-bottom: 33px;
     cursor: pointer;
+    margin-right: 13px;
+    display: block;
 }
 
-.debts-list__item__button:focus {
+.debts-list__item__button--less {
+    font-size: 14px;
+    color: #ff4040;
+    border: none;
+    background: transparent;
+    margin-bottom: 33px;
+    cursor: pointer;
+    margin-right: 13px;
+    display: none;
+}
+
+.debts-list__item__button--more:focus,
+.debts-list__item__button--less:focus {
     outline: none;
 }
