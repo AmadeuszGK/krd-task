@@ -1,23 +1,21 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import DebtsList from './DebtsList/DebtsList'
 import Counter from './Counter/Counter'
 import Filter from './Filter/Filter'
+
 
 export class App extends React.Component {
   state = {
     debtsList: [],
     debtsAmount: '',
-    filterText: '',
   }
 
-  onFilterText = (filterText) => {
-    this.setState({
-      filterText
-    })
-
-    console.log("asdsad", this.state.filterText)
-  }
+  // onFilterList = (filterList) => {
+  //   this.setState({
+  //     debtsList: filterList
+  //   })
+  // }
 
   componentDidMount() {
     fetch("http://rekrutacja-webhosting.it.krd.pl/api/Recruitment/GetTopDebts")
@@ -34,11 +32,32 @@ export class App extends React.Component {
   }
 
   render() {
-    return(<div>
-      <Filter filterText={this.onFilterText}/>
-      <Counter debtsAmount={this.state.debtsAmount}/>
-      <DebtsList debtsList={this.state.debtsList}/>
-    </div>)
+    return(<main>
+      <header>
+        <div className="container">
+          <div className="col-12 row header-container">
+            <div className="filter">
+              <p className="filter__title">Podaj numer sprawy, nazwę lub NIP dłużnika:</p>
+              <Filter filterList={this.onFilterList}/>
+              <p className="filter__tip">*wpisz conajmniej 3 znaki</p>
+            </div>
+            <Counter debtsAmount={this.state.debtsAmount}/>
+          </div>
+        </div>
+      </header>
+      <section>
+        <div className="container">
+          <div className="col-12 row debts-list">
+            <div className="debts-list__titles">
+              <p className="column-1">dłużnik</p>
+              <p className="column-2">NIP</p>
+              <p className="column-3">kwota zadłużenia</p>
+            </div>
+            <DebtsList debtsList={this.state.debtsList}/>
+          </div>
+        </div>
+      </section>
+    </main>)
   }
 }
 

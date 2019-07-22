@@ -18,7 +18,7 @@ export default class DebtsList extends React.Component {
 
   render() {
     return (
-      <ul className="ui relaxed divided list selection">
+      <ul className="debts-list__items">
         {this.props.debtsList.map(this.debtsListToDebtsListItem)}
       </ul>
     );

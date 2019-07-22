@@ -1,0 +1,53 @@
+.debts-list__item {
+    border-bottom: 1px solid #7c7c7c;
+    height: 70px;
+    overflow: hidden;
+    transition: height 0.2s ease-in-out;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.debts-list__item--focus {
+    height: auto;
+    background: rgb(255, 209, 209);
+}
+
+.debts-list__item__title {
+    text-transform: uppercase;
+    font-size: 11px;
+    padding-right: 20px;
+    color: #7c7c7c;
+}
+
+.debts-list__item__nip-doctype {
+    padding-right: 30px;
+}
+
+.debts-list-item__number {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.debts-list__item {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.debts-list__item__value {
+    margin-bottom: 18px;
+    font-size: 15px;
+}
+
+.debts-list__item__button {
+    font-size: 14px;
+    color: #ff4040;
+    border: none;
+    background: transparent;
+    margin-bottom: 33px;
+    cursor: pointer;
+}
+
+.debts-list__item__button:focus {
+    outline: none;
+}

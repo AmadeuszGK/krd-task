@@ -1,0 +1,16 @@
+@import './Counter/Counter.scss';
+@import './Header.scss';
+@import './Filter/Filter.scss';
+@import './DebtsListItem/DebtsListItem.scss';
+@import './DebtsList/DebtsList.scss';
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap&subset=latin-ext');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+p {
+  margin: 0;
+}

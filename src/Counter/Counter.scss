@@ -1,0 +1,16 @@
+.debts-counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.debts-counter__title {
+    font-size: 17px;
+    color: #fff;
+    padding-right: 15px;
+}
+
+.debts-counter__amount {
+    font-size: 17px;
+    color: rgb(255, 64, 64);
+}
