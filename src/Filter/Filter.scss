@@ -46,6 +46,10 @@
     cursor: pointer;
 }
 
+.filter__container__button:focus {
+    outline: none;
+}
+
 .filter__container__button:hover {
     background: #ff1111;
 }

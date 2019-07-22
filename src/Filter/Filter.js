@@ -4,37 +4,41 @@ export class Filter extends React.Component {
     state = {
         inputValue: "",
         filteredList: [],
+        loading: false
     }
 
 
 
   handleChange = (event) => {
       this.setState({ inputValue: event.target.value })
-      console.log('aa', this.state.inputValue)
+      console.log('inputValue', this.state.inputValue)
   }
 
-  filterItem = {
-      Name: this.state.inputValue
-  }
-
-  filterList = (filterItem) => {
+  filterList = () => {
+    this.setState(prevState => ({ loading: !prevState.loading }))
+    this.props.filterList(this.state.filteredList)
+    this.props.loading(this.state.loading)
+    console.log("loading", this.state.loading)
 
     fetch("http://rekrutacja-webhosting.it.krd.pl/api/Recruitment/GetFilteredDebts", {
         method: "post",
         headers: {
             'Content-Type': 'application/json'
         }, 
-        //body: JSON.parse(filterItem)
-        body: JSON.parse(filterItem)
+        body: JSON.stringify(this.state.inputValue)
     })
     .then(res => res.json())
     .then(json => this.setState({ filteredList: json }))
-    .catch(error => console.error('Error:', error));
+    // .then(this.setState({ loading: false }))
+    .catch(error => alert("Wpisz conajmniej 3 znaki!"));
 
     setTimeout(() => {
         console.log('filter', this.state.filteredList)
-
       }, 1000);
+      setTimeout(() => {
+        console.log('filter', this.state.filteredList)
+      }, 4000);
+    this.props.filterList(this.state.filteredList)
   }
 
     render() {
