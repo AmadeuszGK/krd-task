@@ -7,11 +7,17 @@ export default class DebtsListItem extends React.Component {
       itemClass: "debts-list__item"
     };
   }
+  
 
   showMore() {
+    let allItems = document.querySelectorAll(".debts-list__item");
+    console.log("allItems", allItems)
+    allItems.forEach(el => el.classList.remove("debts-list__item--focus"));
+
     this.setState({
       itemClass: "debts-list__item debts-list__item--focus"
     });
+
   }
 
   showLess() {
@@ -41,23 +47,23 @@ export default class DebtsListItem extends React.Component {
           <p className="debts-list__item__title">KWOTA ZADŁUENIA</p>
           <p className="debts-list__item__value">{this.props.value}</p>
           <p className="debts-list__item__title">CENA ZADŁUENIA</p>
-          <p className="debts-list-item__value">{this.props.price}</p>
+          <p className="debts-list__item__value">{this.props.price}</p>
+          <p className="debts-list__item__title">NUMER</p>
+          <p className="debts-list__item__value">{this.props.number}</p>  
         </div>
         <div className="debts-list-item__number column-4">
           <button
-            className="debts-list__item__button--more"
+            className="debts-list__item__button debts-list__item__button--more"
             onClick={this.showMore.bind(this)}
           >
             WIĘCEJ
           </button>
           <button
-            className="debts-list__item__button--less"
+            className="debts-list__item__button debts-list__item__button--less"
             onClick={this.showLess.bind(this)}
           >
             MNIEJ
           </button>
-          <p className="debts-list__item__title">NUMER</p>
-          <p className="debts-list__item__value">{this.props.number}</p>
         </div>
       </li>
     );

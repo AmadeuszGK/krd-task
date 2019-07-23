@@ -1,6 +1,8 @@
 .debts-list {
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
 }
 
 .debts-list__items {
@@ -17,22 +19,48 @@
     font-size: 17px;
     color: #7c7c7c;
     padding: 30px 15px 15px 15px;
-    
+    .column-3 {
+        width: 35%;
+    }
 }
 
 .column-1 {
     width: 35%;
+    padding-right: 10px;
 }
 
 .column-2 {
     width: 30%;
+    padding-right: 10px;
 }
 
 .column-3 {
     width: 15%;
+    padding-right: 10px;
     white-space: nowrap;
 }
 
 .column-4 {
     width: 20%;
 }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 0px) and (max-width: 767.98px) { 
+    .debts-list__titles {
+        font-size: 13px;
+    }
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .debts-list__titles {
+        font-size: 14px;
+    }
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .debts-list__titles {
+        font-size: 15px;
+    }
+ }

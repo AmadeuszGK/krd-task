@@ -13,9 +13,11 @@ export class App extends React.Component {
     loading: false,
   }
 
-  onFilterList = (debtsList) => {
+ 
+
+  onFilterList = (filterdList) => {
     this.setState({
-      debtsList: debtsList
+      debtsList: filterdList
     })
   }
 
@@ -24,6 +26,7 @@ export class App extends React.Component {
       loading: loading
     })
   }
+
 
   componentDidMount() {
     fetch("http://rekrutacja-webhosting.it.krd.pl/api/Recruitment/GetTopDebts")
@@ -35,11 +38,11 @@ export class App extends React.Component {
       .then(json => this.setState({ debtsAmount: json }));
 
       setTimeout(() => {
-        console.log('dupa', this.state.debtsList)
+        console.log('debtsList', this.state.debtsList)
       }, 3000);
 
       setTimeout(() => {
-        console.log('dupa', this.state.debtsList)
+        console.log('debtsList', this.state.debtsList)
       }, 10000);
   }
 

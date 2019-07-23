@@ -2,15 +2,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 20px;
+    font-size: 17px;
 }
 
+
 .debts-counter__title {
-    font-size: 17px;
     color: #fff;
     padding-right: 15px;
 }
 
 .debts-counter__amount {
-    font-size: 17px;
     color: rgb(255, 64, 64);
 }
