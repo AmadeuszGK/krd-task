@@ -15,3 +15,12 @@ p {
   margin: 0;
   padding: 0;
 }
+
+.loader {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 150px;
+}
